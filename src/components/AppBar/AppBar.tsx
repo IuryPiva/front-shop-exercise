@@ -8,8 +8,8 @@ import logo from "assets/OFN_logo.svg";
 
 export const AppBar = () => (
   <MuiAppBar position="static">
-    <Toolbar className="h-24 bg-gray-100 text-gray-700 ">
-      <Container className="flex px-24">
+    <Toolbar className="h-24 bg-gray-100 text-gray-700">
+      <Container className="flex px-24" maxWidth="md">
         <Link to="/" className="flex-grow flex leading-4">
           <img src={logo} className="App-logo" alt="logo" />
           <span className="w-32 ml-4 pt-1/2">Open Food Network</span>

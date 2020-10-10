@@ -9,11 +9,13 @@ import { Cart } from "pages/Cart";
 
 import { AppBar } from "components/AppBar/AppBar";
 
+import 'App.css';
+
 function App() {
   return (
     <>
       <AppBar />
-      <Container maxWidth="md">
+      <Container maxWidth="sm" className="pt-12">
         <Switch>
           <Route path="/" component={Home} exact />
           <Route path="/cart" component={Cart} exact />

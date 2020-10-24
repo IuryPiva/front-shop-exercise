@@ -4,11 +4,14 @@ import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import { BrowserRouter } from "react-router-dom";
+import { ShopProvider } from "contexts/ShopContext/ShopProvider";
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      <App />
+      <ShopProvider>
+        <App />
+      </ShopProvider>
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")

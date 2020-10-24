@@ -5,20 +5,25 @@ import { ShoppingCart } from "@material-ui/icons";
 import { Link } from "react-router-dom";
 
 import logo from "assets/OFN_logo.svg";
+import { useShopContext } from "contexts/ShopContext/ShopContext";
 
-export const AppBar = () => (
-  <MuiAppBar position="static">
-    <Toolbar className="h-24 bg-gray-100 text-gray-700">
-      <Container className="flex px-24" maxWidth="md">
-        <Link to="/" className="flex-grow flex leading-4">
-          <img src={logo} className="App-logo" alt="logo" />
-          <span className="w-32 ml-4 pt-1/2">Open Food Network</span>
-        </Link>
-        <Link to="/cart" className="pt-1">
-          <ShoppingCart />
-          <span className="ml-2">My cart</span>
-        </Link>
-      </Container>
-    </Toolbar>
-  </MuiAppBar>
-);
+export const AppBar = () => {
+  const { state } = useShopContext();
+
+  return (
+    <MuiAppBar position="static">
+      <Toolbar className="h-24 bg-gray-100 text-gray-700">
+        <Container className="flex px-24" maxWidth="md">
+          <Link to="/" className="flex-grow flex leading-4">
+            <img src={logo} className="App-logo" alt="logo" />
+            <span className="w-32 ml-4 pt-1/2">Open Food Network</span>
+          </Link>
+          <Link to="/cart" className="pt-1">
+            <ShoppingCart />
+            <span className="ml-2">My cart {state.products.size > 0 && `(${state.products.size})`}</span>
+          </Link>
+        </Container>
+      </Toolbar>
+    </MuiAppBar>
+  );
+};

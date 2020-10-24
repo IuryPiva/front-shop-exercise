@@ -23,6 +23,7 @@ module.exports = {
       white: '#fff',
 
       action: '#e4b231',
+      remove: '#e47132',
 
       gray: {
         100: '#f7fafc',
